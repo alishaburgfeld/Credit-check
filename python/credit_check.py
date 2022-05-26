@@ -1,19 +1,4 @@
 
-
-def digit_sum(n):
-    """
-    This function returns the sum of the digits of the given number.
-
-    Args:
-        n (int): The number
-
-    Returns:
-        int: The sum of the digits of the given number
-    """
-
-    return sum(int(digit) for digit in str(n))
-
-
 def credit_check(string):
     """
     This function returns True if the given string is a valid credit card number
@@ -32,12 +17,3 @@ def credit_check(string):
     Returns:
         bool: True if the given string is a valid credit card number
     """
-
-    nums = [int(digit) for digit in string]
-
-    for i in range(len(nums) - 2, -1, -2):
-        nums[i] *= 2
-        if nums[i] > 9:
-            nums[i] = digit_sum(nums[i])
-
-    return "The number is valid!" if sum(nums) % 10 == 0 else "The number is invalid!"
